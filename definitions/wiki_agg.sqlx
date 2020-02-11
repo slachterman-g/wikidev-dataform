@@ -1,9 +1,6 @@
 config {
   type: "table",
-  schema: "wiki_push",
-  bigquery: {
-    partitionBy: "date(timestamp)"
-  }
+  schema: "wiki_push"
 }
 
 select
