@@ -7,6 +7,6 @@ select
   user,
   count(*) changeCount
 from
-  $ref{"wiki_staged"}
+${ref("wiki_staged")}
 group by
   user
