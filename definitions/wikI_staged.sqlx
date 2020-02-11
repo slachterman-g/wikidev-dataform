@@ -1,0 +1,15 @@
+config {
+  type: "table",
+  schema: "wiki_push",
+  bigquery: {
+    partitionBy: "date(timestamp)"
+  }
+}
+
+select
+  user,
+  title,
+  timestamp,
+  current_timestamp() as processed_time
+from
+  wiki_push.wiki_changes

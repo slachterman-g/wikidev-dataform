@@ -7,6 +7,6 @@ select
   user,
   count(*) changeCount
 from
-  wiki_push.wiki_changes
+  $ref{"wiki_staged"}
 group by
   user
