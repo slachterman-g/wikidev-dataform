@@ -1,5 +1,5 @@
 config {
-  type: "table",
+  type: "incremental",
   schema: "wiki_push",
   bigquery: {
     partitionBy: "date(timestamp)"
@@ -13,3 +13,5 @@ select
   current_timestamp() as processed_time
 from
   wiki_push.wiki_changes
+
+${ when(incremental(), `WHERE timestamp > (SELECT MAX(timestamp) FROM ${self()})`) }
