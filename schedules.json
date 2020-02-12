@@ -1,1 +1,14 @@
-{}
+{
+  "schedules": [{
+    "name": "Aggregate-Streams",
+    "options": {
+      "includeDependencies": false,
+      "fullRefresh": false
+    },
+    "cron": "34 */1 * * *",
+    "notification": {
+      "onSuccess": false,
+      "onFailure": false
+    }
+  }]
+}
