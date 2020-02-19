@@ -3,7 +3,7 @@ config {
   schema: "wiki_push",
   bigquery: {
     partitionBy: "date(timestamp)",
-    clusterBy: "user"
+    clusterBy: ["user"]
   }
 }
 
