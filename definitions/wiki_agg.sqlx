@@ -5,8 +5,7 @@ config {
 
 select
   user,
-  count(*) changeCount
+  count(*) as changesCount
 from
 ${ref("wiki_staged")}
-group by
-  user
+group by user
