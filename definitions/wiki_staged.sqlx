@@ -2,7 +2,7 @@ config {
   type: "incremental",
   schema: "wiki_push",
   bigquery: {
-    partitionBy: "date(timestamp)",
+    partitionBy: "date(event_time)",
     clusterBy: ["user"]
   }
 }
@@ -10,7 +10,7 @@ config {
 select
   user,
   title,
-  timestamp,
+  timestamp as event_time,
   current_timestamp() as processed_time
 from
   wiki_push.wiki_changes
